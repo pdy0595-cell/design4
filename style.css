@@ -1,0 +1,394 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+a {
+  color: inherit;         /* 부모의 폰트 컬러 그대로 사용 */
+  text-decoration: none;  /* 밑줄 제거 */
+}
+
+a:hover {
+  opacity: 0.6;           /* 살짝 투명하게 */
+  transition: 0.3s;
+}
+
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Arial, sans-serif;
+  background: #000; /* 포스터처럼 검은 외곽 */
+  color: #111;
+}
+
+/* 공통 래퍼 */
+
+.outer-frame {
+  max-width: 1280px;
+  margin: 24px auto;
+  background: #fff;
+  padding: 32px;
+}
+
+.inner-page {
+  background: #f3f3f3; /* 포스터 안쪽 연회색 캔버스 */
+  min-height: 80vh;
+}
+
+/* 공통 레이아웃 */
+
+.inner {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.page {
+  padding-bottom: 56px;
+}
+
+.section {
+  margin: 64px 0;
+}
+
+.section-label {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+/* HEADER */
+
+.site-header {
+  border-bottom: 1px solid #000;
+  padding: 16px 0 12px;
+  background: #f3f3f3;
+}
+
+.site-header .inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 0.9;
+  font-size: 22px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.main-nav a {
+  color: #111;
+  text-decoration: none;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* HERO */
+
+.hero {
+  padding: 64px 0 32px;
+  border-bottom: 1px solid #000;
+  position: relative;
+}
+
+.hero-inner {
+  position: relative;
+  padding: 40px 56px 56px;
+}
+
+.hero-side {
+  position: absolute;
+  top: 50%;
+  transform-origin: center;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
+.hero-side span {
+  display: block;
+}
+
+.hero-side-left {
+  left: 0;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.hero-side-right {
+  right: 0;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.hero-center {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-weight: 900;
+  font-size: 76px;
+  letter-spacing: 0.1em;
+}
+
+.hero-title-top {
+  margin-bottom: 28px;
+}
+
+.hero-title-bottom {
+  margin-top: 28px;
+}
+
+.profile-frame {
+  border: 8px solid #000;
+  padding: 24px;
+  max-width: 360px;
+  margin: 0 auto;
+  background: #f3f3f3;
+}
+
+.profile-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 36px;
+}
+
+.hero-name {
+  font-size: 32px;
+}
+
+/* INTRO */
+
+.intro {
+  margin: 48px 0 40px;
+}
+
+.intro p {
+  max-width: 680px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* CURRENT WORKS GRID */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;  /* Desktop 2 columns */
+  gap: 24px;
+}
+
+/* MOBILE: 3 items → 1 column */
+@media (max-width: 600px) {
+  .grid-2 {
+    grid-template-columns: 1fr; /* mobile single column */
+    gap: 20px;
+  }
+}
+
+.work-card {
+  background: #f8f8f8;
+  border: 2px solid #000;
+  padding: 12px;
+}
+
+.work-thumb {
+  background: #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.work-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.work-meta {
+  font-size: 12px;
+}
+
+.work-meta.align-right {
+  text-align: right;
+}
+
+.work-meta.align-center {
+  text-align: center;
+}
+
+.work-title {
+  font-weight: 600;
+}
+
+.work-info {
+  margin-top: 4px;
+  color: #555;
+}
+
+.view-more {
+  font-size: 11px;
+  text-decoration: none;
+  color: #111;
+}
+
+.view-more:hover {
+  text-decoration: underline;
+}
+
+/* ABOUT & CONTACT */
+
+.about-section .grid-2 {
+  align-items: flex-start;
+}
+
+.about-text {
+  font-size: 14px;
+}
+
+.about-body {
+  margin-top: 10px;
+  line-height: 1.7;
+}
+
+.contact-box {
+  font-size: 14px;
+  padding-left: 40px;
+}
+
+.contact-line {
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* TOOL LOGOS */
+
+.tool-logos {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.tool-logos img {
+  height: 25px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* MOBILE: About + Contact stack + logo center */
+@media (max-width: 600px) {
+  .about-section .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contact-box {
+    padding-left: 0;
+    text-align: left;
+  }
+
+  .tool-logos {
+    justify-content: center;
+  }
+
+  .tool-logos img {
+    height: 40px;
+  }
+}
+
+/* FOOTER */
+
+.site-footer {
+  border-top: 1px solid #000;
+  padding: 16px 0 24px;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* TOP BUTTON */
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #111;
+  background: #fff;
+}
+
+/* HERO & GLOBAL RESPONSIVE FIX */
+
+@media (max-width: 960px) {
+  .hero-inner {
+    padding: 32px 32px 40px;
+  }
+  .hero-side {
+    display: none;
+  }
+  .hero-title {
+    font-size: 56px;
+  }
+  .profile-frame {
+    max-width: 300px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 20px;
+  }
+  .outer-frame {
+    margin: 0;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-title {
+    font-size: 42px;
+  }
+  .hero-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
